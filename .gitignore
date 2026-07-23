@@ -1,0 +1,22 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# ML artifacts / data (review before ever committing — NDA)
+*.ckpt
+*.pth
+*.h5
+data/
+datasets/
+
+# Tooling caches
+.impeccable/
