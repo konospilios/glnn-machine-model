@@ -5,14 +5,10 @@ implemented from scratch in **JAX** — that learns the dynamics of an agricultu
 **boom-sprayer suspension** directly from sensor data, as a **data-driven replacement
 for a hand-derived physics model**.
 
-> **MSc project** — Electro-Mechanical System Design, Aalborg University (EMSD, 3rd
-> semester, 2024–25). **Joint work with Bjartur Ragnarsson á Norði** (equal
-> collaboration, no split of tasks).
->
-> **Industry collaboration / NDA:** this project was carried out with an industrial
-> partner. **This repository contains only our own method and implementation.** The
-> partner's proprietary data, physical parameters, and their own analytical model are
-> deliberately excluded, and system states are described generically.
+MSc project — Electro-Mechanical System Design, Aalborg University (EMSD, 3rd
+semester, 2024–25), with Bjartur Ragnarsson á Norði. Developed together with an
+industry partner; this repository holds our method and implementation, and the
+partner's data and machine-specific details are kept out.
 
 ## The idea
 
@@ -46,14 +42,11 @@ error** between predicted and measured accelerations, via gradient-based optimis
 
 ## Results (summary)
 
-The GLNN successfully learns the suspension's acceleration dynamics, capturing **both
-conservative and non-conservative effects**, with **low prediction error**
-(mean-squared error on the order of `1e-3` on held-out signals). The study also maps
-out the sensitivity to network architecture, learning rate, batch size, and data
-normalisation.
-
-Full quantitative results and figures are in the project report (not included here —
-see the NDA note above).
+The GLNN learns the suspension's acceleration dynamics, capturing **both conservative
+and non-conservative effects**, with **low prediction error** (mean-squared error on
+the order of `1e-3` on held-out signals). The work also maps the model's sensitivity
+to network architecture, learning rate, batch size, and data normalisation across
+sine, square, and pseudo-random excitations.
 
 ## Tech
 
@@ -66,7 +59,7 @@ glnn-machine-model/
 ├── README.md
 ├── code/
 │   ├── glnn.py       the GLNN implementation (~1370 lines, JAX)
-│   └── README.md     how this file was recovered, and its known caveats
+│   └── README.md     a map of the implementation
 └── figures/
-    └── glnn_concept.pdf   the "GLNN replaces the physics model" concept
+    └── glnn_concept.png   the "GLNN replaces the physics model" concept
 ```
